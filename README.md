@@ -1,2 +1,2 @@
-# XManagementSystem
+# FitnessCenterMembersManagementSystem
 course project for oop
