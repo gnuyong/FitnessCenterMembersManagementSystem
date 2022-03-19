@@ -21,16 +21,30 @@ public class MenuManager {
 			menunumber = input.nextInt();
 			
 			if (menunumber==1) {
-				Add_fitness_center_members();
+				System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
+				String memberId = input.next();				
+				System.out.print("휘트니스 센터 회원의 이름을 입력하세요: ");
+				String memberName = input.next();				
+				System.out.print("휘트니스 센터 회원의 전화번호를 입력하세요: ");
+				String memberPhone = input.next();			
+				System.out.print("휘트니스 센터 회원의 담당 PT선생님 이름을 입력하세요: ");
+				String memberPt = input.next();			
+				System.out.print("휘트니스 센터 회원의 등록 개월 수를 입력하세요: ");
+				int memberRegistration = input.nextInt();			
+				System.out.print("휘트니스 센터 회원의 개인 사물함 번호를 입력하세요: ");
+				int memberLocker = input.nextInt();
 			}
 			else if (menunumber==2) {
-				Delete_fitness_center_members();
+				System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
+				String memberId = input.next();
 			}
 			else if (menunumber==3) {
-				Edit_fitness_center_members();
+				System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
+				String memberId = input.next();
 			}
 			else if (menunumber==4) {
-				View_fitness_center_members();
+				System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
+				String memberId = input.next();
 			}
 			else {
 				continue;
@@ -38,38 +52,5 @@ public class MenuManager {
 		}
 
 	}
-	public static void Add_fitness_center_members() {
-		Scanner input = new Scanner(System.in);
-		System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
-		String memberId = input.nextLine();
-		System.out.print("휘트니스 센터 회원의 이름을 입력하세요: ");
-		String memberName = input.nextLine();
-		System.out.print("휘트니스 센터 회원의 전화번호를 입력하세요: ");
-		String memberPhone = input.nextLine();
-		System.out.print("휘트니스 센터 회원의 담당 PT선생님 이름을 입력하세요: ");
-		String memberPt = input.nextLine();
-		System.out.print("휘트니스 센터 회원의 등록 개월 수를 입력하세요: ");
-		int memberRegistration = input.nextInt();
-		System.out.print("휘트니스 센터 회원의 개인 사물함 번호를 입력하세요: ");
-		int memberLocker = input.nextInt();
-		
-		
-		
-	}
-	public static void Delete_fitness_center_members() {
-		Scanner input = new Scanner(System.in);
-		System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
-		String memberId = input.nextLine();
-	}
-	public static void Edit_fitness_center_members() {
-		Scanner input = new Scanner(System.in);
-		System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
-		String memberId = input.nextLine();
-	}public static void View_fitness_center_members() {
-		Scanner input = new Scanner(System.in);
-		System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
-		String memberId = input.nextLine();
-	}
 	
-
 }
