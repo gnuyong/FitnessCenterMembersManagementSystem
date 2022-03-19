@@ -42,6 +42,8 @@ public class MenuManager {
 		Scanner input = new Scanner(System.in);
 		System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
 		String memberId = input.nextLine();
+		System.out.print("휘트니스 센터 회원의 이름을 입력하세요: ");
+		String memberName = input.next();
 		System.out.print("휘트니스 센터 회원의 전화번호를 입력하세요: ");
 		String memberPhone = input.nextLine();
 		System.out.print("휘트니스 센터 회원의 담당 PT선생님 이름을 입력하세요: ");
