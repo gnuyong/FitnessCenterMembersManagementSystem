@@ -5,11 +5,11 @@ public class MenuManager {
 	public static void main(String[] args) {
 		
 		Scanner input = new Scanner(System.in);
-		int menunumber = 5;
+		int menunumber=5;
 		
 		while(menunumber != 6) 
 		{
-			System.out.println("-----Fiteness cneter members menu-----");
+			System.out.println("-----Fiteness center members menu-----");
 			System.out.println("1.Add fitness center members");
 			System.out.println("2.Delete fitness center members");
 			System.out.println("3.Edit fitness center members");
@@ -22,11 +22,13 @@ public class MenuManager {
 			
 			if (menunumber==1) {
 				System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
-				String memberId = input.next();				
+				String memberId = input.nextLine();	
+				input.nextLine();
 				System.out.print("휘트니스 센터 회원의 이름을 입력하세요: ");
 				String memberName = input.next();				
 				System.out.print("휘트니스 센터 회원의 전화번호를 입력하세요: ");
-				String memberPhone = input.next();			
+				String memberPhone = input.nextLine();	
+				input.nextLine();
 				System.out.print("휘트니스 센터 회원의 담당 PT선생님 이름을 입력하세요: ");
 				String memberPt = input.next();			
 				System.out.print("휘트니스 센터 회원의 등록 개월 수를 입력하세요: ");
@@ -36,15 +38,18 @@ public class MenuManager {
 			}
 			else if (menunumber==2) {
 				System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
-				String memberId = input.next();
+				String memberId = input.nextLine();
+				input.nextLine();
 			}
 			else if (menunumber==3) {
 				System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
-				String memberId = input.next();
+				String memberId = input.nextLine();
+				input.nextLine();
 			}
 			else if (menunumber==4) {
 				System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
-				String memberId = input.next();
+				String memberId = input.nextLine();
+				input.nextLine();
 			}
 			else {
 				continue;
