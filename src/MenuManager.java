@@ -13,9 +13,9 @@ public class MenuManager {
 		while(menunumber != 5) 
 		{
 			System.out.println("-----Fiteness center members menu-----");
-			System.out.println("1.Add fitness center members");
-			System.out.println("2.Delete fitness center members");
-			System.out.println("3.Edit fitness center members");
+			System.out.println("1.Add fitness center member");
+			System.out.println("2.Delete fitness center member");
+			System.out.println("3.Edit fitness center member");
 			System.out.println("4.View fitness center members");
 			System.out.println("5.Exit");
 			System.out.print("1 ~ 5의 메뉴번호 중 하나를 선택하세요: " );
