@@ -4,6 +4,7 @@ import java.util.Scanner;
 import Members.AdvancedMember;
 import Members.BeginnerMember;
 import Members.Members;
+import Members.MembersKind;
 import Members.ProMember;
 
 public class MembersManager {
@@ -18,25 +19,25 @@ public class MembersManager {
 		int kind =0;
 		Members member;
 		while(kind != 1 && kind != 2 && kind !=3) {
-			System.out.print("1.Beginner ");
-			System.out.print("2.Advanced ");
-			System.out.print("3.Pr0 ");
+			System.out.println("1.Beginner ");
+			System.out.println("2.Advanced ");
+			System.out.println("3.Pr0 ");
 			System.out.print(" 멤버의 등급에 맞는 1~3 사이의 숫자를 고르세요: ");
 			kind = input.nextInt();
 			if(kind==1) {
-				member = new BeginnerMember();
+				member = new BeginnerMember(MembersKind.Beginner);
 				member.getUserInput(input);
 				members.add(member);
 				break;
 			}
 			else if(kind==2) {
-				member = new AdvancedMember();
+				member = new AdvancedMember(MembersKind.Advanced);
 				member.getUserInput(input);
 				members.add(member);
 				break;
 			}
 			else if(kind==3) {
-				member = new ProMember();
+				member = new ProMember(MembersKind.Pro);
 				member.getUserInput(input);
 				members.add(member);
 				break;

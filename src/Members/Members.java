@@ -14,7 +14,21 @@ public class Members {
 	public Members() {
 	}
 	
+	public Members(MembersKind kind) {
+		this.kind = kind;
+	}
+	
 	public Members(int id, String name, int phone, String pt, int registration, int locker) {
+		this.id = id;
+		this.name = name;
+		this.phone = phone;
+		this.pt = pt;
+		this.registration = registration;
+		this.locker = locker;
+	}
+	
+	public Members(MembersKind kind,int id, String name, int phone, String pt, int registration, int locker) {
+		this.kind = kind;
 		this.id = id;
 		this.name = name;
 		this.phone = phone;
@@ -79,9 +93,21 @@ public class Members {
 		this.locker = locker;
 	}
 
-	
 	public void printInfo() {
-		System.out.println("회원 ID: "+ this.id + " 회원 이름: " + this.name + " 회원의 전화번호:  " + this.phone );
+		String sKind = "없음";
+		switch(this.kind) {
+		case Beginner:
+			sKind = "Beginner";
+			break;
+		case Advanced:
+		    sKind = "Advanced";
+		    break;
+		case Pro:
+			sKind ="Pro";
+			break;
+		default:
+		}
+		System.out.println("회원등급: "+this.kind+"회원 ID: "+ this.id + " 회원 이름: " + this.name + " 회원의 전화번호:  " + this.phone );
 		System.out.println("회원 PT선생님 이름: " + this.pt + " 회원 등록 개월 수: " + this.registration + " 회원 사물함 번호: " + this.locker);
 	}
 	

@@ -1,6 +1,10 @@
 package Members;
 import java.util.Scanner;
 public class ProMember extends Members {
+	public ProMember(MembersKind kind) {
+		super(kind);
+	}
+	
 	public void getUserInput(Scanner input) {
 		System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
 		int id = input.nextInt();
@@ -39,5 +43,22 @@ public class ProMember extends Members {
 		System.out.print("휘트니스 센터 회원의 개인 사물함 번호를 입력하세요: ");
 		int locker = input.nextInt();
 		this.setLocker(locker);
+	}
+	public void printInfo() {
+		String sKind = "없음";
+		switch(this.kind) {
+		case Beginner:
+			sKind = "Beginner";
+			break;
+		case Advanced:
+		    sKind = "Advanced";
+		    break;
+		case Pro:
+			sKind ="Pro";
+			break;
+		default:
+		}
+		System.out.println("회원등급: "+this.kind+"회원 ID: "+ this.id + " 회원 이름: " + this.name + " 회원의 전화번호:  " + this.phone );
+		System.out.println("회원 PT선생님 이름: " + this.pt + " 회원 등록 개월 수: " + this.registration + " 회원 사물함 번호: " + this.locker);
 	}
 }
