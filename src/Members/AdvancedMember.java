@@ -1,6 +1,6 @@
 package Members;
 import java.util.Scanner;
-public class AdvancedMember extends Members {
+public class AdvancedMember extends Members implements MemberInput {
 	protected int ptPhone;
 	
 	public AdvancedMember(MembersKind kind) {

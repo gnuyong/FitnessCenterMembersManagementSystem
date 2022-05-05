@@ -1,6 +1,6 @@
 package Members;
 import java.util.Scanner;
-public class BeginnerMember extends Members {
+public class BeginnerMember extends Members implements MemberInput  {
 	public BeginnerMember(MembersKind kind) {
 		super(kind);
 	}
