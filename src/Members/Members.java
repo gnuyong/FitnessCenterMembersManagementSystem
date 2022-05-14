@@ -2,7 +2,9 @@ package Members;
 
 import java.util.Scanner;
 
-public abstract class Members {
+import exception.PTFormatException;
+
+public abstract class Members implements MemberInput {
 	protected MembersKind kind = MembersKind.Beginner; 
 	protected int id;
 	protected String name;
@@ -73,7 +75,10 @@ public abstract class Members {
 		return pt;
 	}
 
-	public void setPt(String pt) {
+	public void setPt(String pt) throws PTFormatException{
+		if(!pt.contains("@") && !pt.equals("") ) {
+			throw new PTFormatException();
+		}
 		this.pt = pt;
 	}
 
@@ -95,6 +100,61 @@ public abstract class Members {
 
 	public abstract void printInfo();
 	
+	public void setMemberID(Scanner input) {
+		System.out.println("휘트니스 센터 회원의 아이디를 입력하세요: ");
+	    int id = input.nextInt();
+	    this.setId(id);
+	}
+	public void setMemberName(Scanner input) {
+		System.out.print("휘트니스 센터 회원의 이름을 입력하세요: ");
+	    String name = input.next();
+	    this.setName(name);
+	}
+	public void setMemberPhone(Scanner input) {
+		System.out.print("휘트니스 센터 회원의 전화번호를 입력하세요: ");
+	    int phone = input.nextInt();
+	    this.setPhone(phone);
+	}
+	public void setMemberPT(Scanner input) {
+		String pt = "";
+		while(!pt.contains("@")) {
+			System.out.print("휘트니스 센터 회원의 담당 PT선생님 이름을 입력하세요: ");
+		    pt = input.next();
+		    try {
+				this.setPt(pt);
+			} catch (PTFormatException e) {
+				System.out.println("형식에 맞지 않는 PT선생님 이름입니다. @를 포함한 형식으로 다시 작성하세요!");
+			}
+		}
+	}
+	public void setMemberRegistration(Scanner input) {
+		 System.out.print("휘트니스 센터 회원의 등록 개월 수를 입력하세요: ");
+		 int registration = input.nextInt();
+		 this.setRegistration(registration);
+	}
+	public void setMemberLocker(Scanner input) {
+		System.out.print("휘트니스 센터 회원의 개인 사물함 번호를 입력하세요: ");
+  	    int locker = input.nextInt();
+  	    this.setLocker(locker);
+	}
+	
+	public String getKindString() {
+		String sKind = "없음";
+		switch(this.kind) {
+		case Beginner:
+			sKind = "Beginner";
+			break;
+		case Advanced:
+		    sKind = "Advanced";
+		    break;
+		case Pro:
+			sKind ="Pro";
+			break;
+		default:
+		}
+		return sKind;
+	}
+	
 	public void getUserInput(Scanner input) {
 		System.out.print("휘트니스 센터 회원의 아이디를 입력하세요: ");
 		int id = input.nextInt();
@@ -110,7 +170,11 @@ public abstract class Members {
 		
 		System.out.print("휘트니스 센터 회원의 담당 PT선생님 이름을 입력하세요: ");
 	    String pt = input.next();			
-		this.setPt(pt);
+		try {
+			this.setPt(pt);
+		} catch (PTFormatException e) {
+			
+		}
 		
 	    System.out.print("휘트니스 센터 회원의 등록 개월 수를 입력하세요: ");
 		int registration = input.nextInt();			
