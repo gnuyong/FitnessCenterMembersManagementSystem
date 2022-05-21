@@ -1,10 +1,15 @@
 package Members;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.PTFormatException;
 
-public abstract class Members implements MemberInput {
+public abstract class Members implements MemberInput, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1650160095127691175L;
 	protected MembersKind kind = MembersKind.Beginner; 
 	protected int id;
 	protected String name;
