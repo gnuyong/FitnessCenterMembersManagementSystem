@@ -7,9 +7,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-public class MemberAdder extends JFrame{
+public class MemberAdder extends JPanel{
 	
-	public MemberAdder() {
+	WindowFrame frame;
+	
+	public MemberAdder(WindowFrame frame) {
+		this.frame = frame;
+		
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
 		
@@ -49,18 +53,12 @@ public class MemberAdder extends JFrame{
 		panel.add(labelLocker);
 		panel.add(fieldLocker);
 		
-		
 		panel.add(new JButton("save"));
 		panel.add(new JButton("cancel"));
 		
+		SpringUtilities.makeCompactGrid(panel, 7, 2, 6, 6, 6, 6);	
 		
-		SpringUtilities.makeCompactGrid(panel, 7, 2, 6, 6, 6, 6);
-		
-		this.setSize(300,300);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		this.setContentPane(panel);
+		this.add(panel);
 		this.setVisible(true);
 	}
-
 }

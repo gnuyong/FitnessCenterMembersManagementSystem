@@ -1,4 +1,6 @@
+package manager;
 import java.io.Serializable;
+import java.lang.reflect.Member;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -138,6 +140,15 @@ public class MembersManager implements Serializable{
 			members.get(i).printInfo();
 		}
 	}
+	
+	public int size() {
+		return members.size();
+	}
+	
+	public MemberInput get(int index) {
+		return (MemberInput) members.get(index);
+	}
+	
 	public void showEditMenu() {
 		System.out.println("-----Fiteness center members Info Edit Menu-----");
 	    System.out.println("1.Edit Id");

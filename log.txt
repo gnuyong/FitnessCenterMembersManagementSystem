@@ -1,2 +1,0 @@
-5월 21, 2022 6:08:48 오후 log.EventLogger log
-정보: add a member

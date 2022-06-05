@@ -1,5 +1,7 @@
 package log;
 
+import event.EventLogger;
+
 public class LoggerTester {
 
 	public static void main(String[] args) {
