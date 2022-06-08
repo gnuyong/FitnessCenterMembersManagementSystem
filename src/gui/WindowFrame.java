@@ -19,7 +19,7 @@ public class WindowFrame extends JFrame {
 		
 		this.memberManager = memberManager;
 		menuselection = new MenuSelection(this);
-		memberadder = new MemberAdder(this);
+		memberadder = new MemberAdder(this, this.memberManager);
 		memberviewer = new MemberViewer(this, this.memberManager);
 		
 		this.add(menuselection);
